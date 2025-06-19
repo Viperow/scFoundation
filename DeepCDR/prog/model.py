@@ -7,7 +7,7 @@ from keras.layers import BatchNormalization
 from keras.layers import Lambda
 from keras.layers import Dropout,GlobalMaxPooling1D,GlobalAveragePooling1D
 from keras.models import Model
-from keras.optimizers import Adam
+from keras.optimizers import adam_v2
 from keras.regularizers import l2
 from layers.graph import GraphLayer,GraphConv
 

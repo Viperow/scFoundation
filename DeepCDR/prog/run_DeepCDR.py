@@ -13,7 +13,6 @@ import scipy.sparse as sp
 import argparse
 from tqdm import tqdm
 from keras import backend as K
-print('GPU',K.tensorflow_backend._get_available_gpus())
 
 ####################################Settings#################################
 parser = argparse.ArgumentParser(description='Drug_response_pre')

@@ -2,7 +2,6 @@ from __future__ import print_function
 
 from keras import activations, initializers, constraints
 from keras import regularizers
-from keras.engine import Layer
 import keras.backend as K
 
 
@@ -139,7 +138,11 @@ class GraphConv(GraphLayer):
         return input_shape[0][:2] + (self.units,)
 
     def compute_mask(self, inputs, mask=None):
-        return mask[0]
+        if mask is None:
+            return None
+        if isinstance(mask, list) and len(mask) > 0:
+            return mask[0]
+        return None
 
     def _call(self, features, edges):
         features = K.dot(features, self.W)
